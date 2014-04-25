@@ -1,0 +1,20 @@
+package com.rsn.tsl.repository;
+
+public abstract class RepositoryFactory { 
+  
+    /** 
+     * Factory method for instantiation of concrete factories. 
+     */  
+    @SuppressWarnings("rawtypes")
+	public static RepositoryFactory instance(Class factory) {  
+        try {  
+            return (RepositoryFactory) factory.newInstance();  
+        } catch (Exception ex) {  
+            throw new RuntimeException("Couldn't create DAOFactory: " + factory);  
+        }  
+    }  
+  
+    // Add your DAO interfaces here  
+    public abstract SurfboardRepository getSurfboardDAO();   
+  
+}  

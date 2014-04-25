@@ -1,0 +1,11 @@
+package com.rsn.tsl.repository.hibernate;
+
+import org.springframework.stereotype.Repository;
+
+import com.rsn.tsl.model.Surfboard;
+import com.rsn.tsl.repository.SurfboardRepository;
+
+@Repository
+public class SurfboardRepositoryHibernate extends GenericHibernateRepository <Surfboard,Long> implements SurfboardRepository {
+
+}

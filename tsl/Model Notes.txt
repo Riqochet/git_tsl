@@ -1,0 +1,9 @@
+Session
+	Date
+	Surfboard
+	Spot
+	Conditions 	- wave height
+			- wave period
+			- wave direction
+			- wind strength
+			- wind direction

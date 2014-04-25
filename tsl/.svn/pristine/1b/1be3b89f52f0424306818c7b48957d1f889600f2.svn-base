@@ -1,0 +1,14 @@
+package com.rsn.tsl.service;
+
+import com.rsn.tsl.model.Surfboard;
+
+public interface SurfboardService {
+	
+	void persistSurfboard(Surfboard surfboard);
+
+	Surfboard findById(Long id);
+
+	void updateSurfboard(Surfboard surfboard);
+
+	void deleteSurfboard(Surfboard surfboard);
+}

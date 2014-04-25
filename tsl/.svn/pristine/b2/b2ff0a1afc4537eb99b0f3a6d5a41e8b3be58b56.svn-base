@@ -1,0 +1,23 @@
+package com.rsn.tsl.model;
+
+import static org.junit.Assert.*;
+import org.junit.Before;
+import org.junit.Test;
+
+public class SurfboardTest {
+	
+	private Surfboard surfboard;
+	
+	private static final String SURFBOARD_NAME = "Mark Sharper";
+	
+	@Before
+	public void init() {
+		surfboard = new Surfboard();
+	}
+
+	@Test
+	public void nameTest() {
+		surfboard.setName(SURFBOARD_NAME);
+		assertTrue(SURFBOARD_NAME.equals(surfboard.getName()));
+	}
+}

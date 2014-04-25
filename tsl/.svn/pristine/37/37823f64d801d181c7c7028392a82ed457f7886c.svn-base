@@ -1,0 +1,18 @@
+package com.rsn.tsl.repository;
+
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
+
+public class SurfboardRepositoryTest
+{
+
+    /**
+     * Rigourous Test :-)
+     */
+	@Test
+    public void checkApp()
+    {
+        assertTrue( true );
+    }
+}

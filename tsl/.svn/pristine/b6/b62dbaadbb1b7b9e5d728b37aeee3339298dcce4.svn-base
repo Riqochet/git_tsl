@@ -1,0 +1,7 @@
+package com.rsn.tsl.repository;
+
+import com.rsn.tsl.model.Surfboard;
+
+public interface SurfboardRepository extends GenericRespository<Surfboard, Long> {
+
+}

@@ -1,0 +1,30 @@
+package com.rsn.tsl.repository.hibernate;
+
+import org.hibernate.Session;
+
+import com.rsn.tsl.repository.RepositoryFactory;
+import com.rsn.tsl.repository.SurfboardRepository;
+
+public class HibernateRepositoryFactory extends RepositoryFactory {  
+	  
+    public SurfboardRepository getSurfboardDAO() {  
+        return (SurfboardRepository)instantiateDAO(SurfboardRepositoryHibernate.class);  
+    }  
+  
+    @SuppressWarnings("rawtypes")
+	private GenericHibernateRepository instantiateDAO(Class daoClass) {  
+        try {  
+            GenericHibernateRepository dao = (GenericHibernateRepository)daoClass.newInstance();  
+            dao.setSession(getCurrentSession());  
+            return dao;  
+        } catch (Exception ex) {  
+            throw new RuntimeException("Can not instantiate DAO: " + daoClass, ex);  
+        }  
+    }  
+  
+    // You could override this if you don't want HibernateUtil for lookup  
+    protected Session getCurrentSession() {  
+        return HibernateUtil.getSessionFactory().getCurrentSession();  
+    }  
+}
+  

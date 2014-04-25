@@ -1,0 +1,8 @@
+com\tsl\service\SurfboardService.class
+com\tsl\service\SurfboardServiceImpl.class
+com\tsl\init\WebAppConfig.class
+com\tsl\model\Surfboard.class
+com\tsl\exception\SurfboardNotFound.class
+com\tsl\init\Initializer.class
+com\tsl\controller\SurfboardController.class
+com\tsl\repository\SurfboardRepository.class

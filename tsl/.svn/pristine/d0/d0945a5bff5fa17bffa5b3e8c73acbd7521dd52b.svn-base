@@ -1,0 +1,30 @@
+package com.rsn.tsl.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.rsn.tsl.model.Surfboard;
+import com.rsn.tsl.repository.SurfboardRepository;
+
+@Service("surfboardService")
+public class SurfboardServiceImpl implements SurfboardService {
+	
+	@Autowired
+	private SurfboardRepository surfboardRepository;
+	
+	public void persistSurfboard(Surfboard surfboard) {
+		surfboardRepository.makePersistent(surfboard);
+	}
+	
+	public Surfboard findById(Long id) {
+		return surfboardRepository.findById(id, false);
+	}
+
+	public void updateSurfboard(Surfboard surfboard) {
+		surfboardRepository.makePersistent(surfboard);
+	}
+
+	public void deleteSurfboard(Surfboard surfboard) {
+		surfboardRepository.makeTransient(surfboard);
+	}
+}

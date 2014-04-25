@@ -1,0 +1,31 @@
+package com.rsn.tsl;
+
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.rsn.tsl.model.Surfboard;
+import com.rsn.tsl.service.SurfboardService;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+		System.out.println("Maven + Hibernate + Oracle");
+		System.out.println("load context");
+		ConfigurableApplicationContext context = new ClassPathXmlApplicationContext(
+				"applicationContext.xml");
+		
+		Surfboard surfboard = new Surfboard();
+		surfboard.setName("The Dish");
+		
+		SurfboardService surfboardService = (SurfboardService) context.getBean("surfboardService");
+		surfboardService.persistSurfboard(surfboard);
+		
+		context.close();
+
+    }
+}
